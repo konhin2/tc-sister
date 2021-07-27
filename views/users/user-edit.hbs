@@ -1,0 +1,28 @@
+{{!-- views/users/user-edit.hbs --}}
+{{#with user}}
+<div class="cont-profile">
+    <div class="profile-card-container">
+        <form action="/userprofile/{{_id}}/edit" method="POST">
+            <div class="flex-upd-user">
+                <div class="mb-4">
+                    <label for="file-upload" class="mb-2 upload-image">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload image
+                    </label>
+                    <input type="file" name="newImage" class="form-control bg-dark border-0" id="file-upload"
+                        onchange="cambiar()" style="display: none;">
+                    <div id="info"></div>
+                    <input type="text" name="existingImage" hidden value="{{imageUrl}}">
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="description" class="form-control bg-dark border-0 adj-size"
+                        placeholder="Description" id="description">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 border-0">update</button>
+            </div>
+            {{#if msg}}
+            <p>{{msg}}</p>
+            {{/if}}
+        </form>
+    </div>
+</div>
+{{/with}}

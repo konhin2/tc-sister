@@ -1,0 +1,111 @@
+:root {
+    --light: #f4daee;
+    --mid:#A15CE6;
+    --dark: #1F2133;
+    --dark-x: #2e3045;
+}
+
+.image-name h1 {
+    font-size: 2em;
+}
+.user-props > p > span, 
+.user-props > p, .image-name h1 {
+    color: var(--light);
+}
+/* Mobile Menu */
+.cont-profile{
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-x);
+    height: 70vh;
+    width: 80vw;
+    border-radius: 3em;
+}
+.image-name img {
+    width: 150px;
+    border-radius: 50%;
+}
+.image-name {
+    margin-bottom: 2em;
+}
+.user-props p{
+    margin-bottom: 2em;
+}
+.description {
+    margin-bottom: 0 !important;
+}
+.email p{
+    position: relative;
+    top: 2em;
+    background-color: var(--mid);
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+.email a {
+    position: relative;
+    top: 0.5em;
+}
+
+
+/* Tablet Menu */
+@media all and (min-width: 468px) {
+    .profile-card-container {
+        height: 65vh;
+        width: 65vw;
+    }
+    .image-name {
+        position: relative;
+        top: -4em;
+    }
+    .email a {
+        top: 4em;
+    }
+    .email p {
+        top: 5em;
+    }
+}
+/* Computer */
+@media all and (min-width: 768px) {
+    .profile-card-container {
+        height: 65vh;
+        width: 40vw;
+    }
+}
+.upload-image{
+    padding: .375rem .75rem;
+    border: 1px solid var(--light);
+    color: var(--light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s;
+    position: relative;
+    top: 4em;
+}
+ 
+.upload-image:hover{
+    color:var(--mid);
+    background-color: var(--light);
+}
+.adj-size {
+    width: 300px !important;
+    transition: all .25s;
+    position: relative;
+    color: var(--light) !important;
+}
+.flex-upd-user {
+    height: 50vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
