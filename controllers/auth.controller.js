@@ -37,17 +37,22 @@ exports.postSignup = (req, res) => {
         .genSalt(10)
         .then(salt => bcryptjs.hash(password, salt))
         .then(hashedPassword => {
-            User.create({
+            return User.create({
                 username,
                 email,
                 passwordHash: hashedPassword,
                 imageUrl,
                 description
+            }).then(()=> {
+                User.findOne({
+                    username
+                })
+                    .then(userFound => {
+                        req.session.currentUser = userFound
+                        return res.redirect('/userprofile/' + userFound.username)
+                    })
+                    .catch((e) => console.log('error redirección signup', e))
             })
-        })
-        .then(createdUser => {
-            req.session.currentUser = createdUser
-            res.redirect('/userprofile')
         })
         .catch(error => {
             // validacion del email valido
@@ -102,7 +107,7 @@ exports.postLogin = async (req, res) => {
             // Vamos a crear en nuestro objeto Session una propiedad que se llame usuario actual
 
             req.session.currentUser = userFound
-            return res.redirect('/userprofile')
+            return res.redirect('/userprofile/' + userFound.username)
         })
         .catch((e) => console.log(e))
 }

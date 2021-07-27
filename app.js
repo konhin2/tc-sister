@@ -20,14 +20,25 @@ app.use((req, res, next) => {
 })
 // 3. RUTAS
 
-// Ruta Home
-app.use('/', require('./routes/index.routes'))
+// Ruta Emergency
+app.use('/', require('./routes/emergency.routes'))
+
+// Ruta Agressor
+app.use('/', require('./routes/agressor.routes'))
 
 // Ruta Autenticación
 app.use('/', require('./routes/auth.routes'))
 
 // Ruta Usiario
 app.use('/', require('./routes/user.routes'))
+
+// Ruta de About
+app.use('/', require('./routes/about.routes'))
+
+// Ruta Home
+app.use('/', require('./routes/index.routes'))
+
+
 
 // 4. SERVIDOR
 module.exports = app

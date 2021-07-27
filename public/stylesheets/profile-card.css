@@ -13,6 +13,34 @@
     color: var(--light);
 }
 /* Mobile Menu */
+.adj-size {
+    width: 70vw;
+    transition: all .25s;
+    position: relative;
+    color: var(--light) !important;
+}
+.upload-image{
+    padding: .375rem .75rem;
+    border: 1px solid var(--light);
+    color: var(--light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s;
+    position: relative;
+    top: 3em;
+}
+.upload-image:hover{
+    color:var(--mid);
+    background-color: var(--light);
+}
+
+.flex-upd-user {
+    height: 60vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .cont-profile{
     text-align: center;
     width: 100%;
@@ -33,6 +61,7 @@
 }
 .image-name img {
     width: 150px;
+    height: 150px;
     border-radius: 50%;
 }
 .image-name {
@@ -60,7 +89,7 @@
 /* Tablet Menu */
 @media all and (min-width: 468px) {
     .profile-card-container {
-        height: 65vh;
+        height: 75vh;
         width: 65vw;
     }
     .image-name {
@@ -73,39 +102,29 @@
     .email p {
         top: 5em;
     }
+    .adj-size {
+        width: 45vw;
+    }
 }
 /* Computer */
 @media all and (min-width: 768px) {
     .profile-card-container {
         height: 65vh;
-        width: 40vw;
+        width: 45vw;
     }
-}
-.upload-image{
-    padding: .375rem .75rem;
-    border: 1px solid var(--light);
-    color: var(--light);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all .25s;
-    position: relative;
-    top: 4em;
-}
- 
-.upload-image:hover{
-    color:var(--mid);
-    background-color: var(--light);
-}
-.adj-size {
-    width: 300px !important;
-    transition: all .25s;
-    position: relative;
-    color: var(--light) !important;
-}
-.flex-upd-user {
-    height: 50vh;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    .adj-size {
+        width: 35vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .upload-image {
+        top: 6em;
+        width: 35vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
