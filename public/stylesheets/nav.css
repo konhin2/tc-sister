@@ -158,3 +158,39 @@ a:hover {
         padding-right: 0;
     }
 }
+.btn-logout{
+    color: var(--light);
+    background-color: transparent;
+    border-radius: 50em;
+    font-size: 1em;
+    font-weight: 200;
+    height: 38px !important;
+    border: 1px solid var(--light);
+    height: 38px;
+    padding: 7px 15px;
+}
+.btn-logout:hover{
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
+    color: var(--mid);
+    transition: all .25s;
+}
+.image-nav-profile{
+    padding: 0;
+    margin: 0;
+    border-radius: 50em;
+    height: 45px;
+}
+.adj-image-nav{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.button.adj-image-nav a {
+    padding: 1px !important;
+    background:var(--mid);
+    border-radius: 50%;
+    border: 2px solid var(--dark-x);
+}
+.button.adj-image-nav a:hover {
+    border: 2px solid white;
+}

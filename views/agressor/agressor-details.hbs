@@ -1,0 +1,68 @@
+
+{{#if agressorEditable}}
+{{#with agressorEditable}}
+<div class="title-page">
+    <h1>Agressor's Details</h1>
+    <a href="/agressors">Go back</a>
+    <a href="/agressor/{{_id}}/edit">Edit</a>
+</div>
+<div>
+    <div>
+        <div>
+            <img src="{{imageUrl}}">
+        </div>
+        <div>
+            <form action="/agressor/{{_id}}/delete" method="POST">
+                <Button>Delete</Button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <h2>{{name}}</h2>
+        <p>
+            <span>Street: {{address}}</span> - 
+            <span>Suburb or City: {{city}}</span> - 
+            <span>State: {{state}}</span>
+        </p>
+        <p>Rate: <span>{{rate}}</span></p>
+        <h3>Indictment: </h3>
+        <p>
+            {{description}}
+        </p>
+    </div>
+</div>
+<div>
+    <h3>Comments</h3>
+</div>
+{{/with}}
+{{else}}
+{{#with agressor}}
+<div class="title-page">
+    <h1>Agressor's Details</h1>
+    <a href="/agressors">Go back</a>
+</div>
+<div>
+    <div>
+        <div>
+            <img src="{{imageUrl}}">
+        </div>
+    </div>
+    <div>
+        <h2>{{name}}</h2>
+        <p>
+            <span>Street: {{address}}</span> - 
+            <span>Suburb or City: {{city}}</span> - 
+            <span>State: {{state}}</span>
+        </p>
+        <p>Rate: <span>{{rate}}</span></p>
+        <h3>Indictment: </h3>
+        <p>
+            {{description}}
+        </p>
+    </div>
+</div>
+<div>
+    <h3>Comments</h3>
+</div>
+{{/with}}
+{{/if}}

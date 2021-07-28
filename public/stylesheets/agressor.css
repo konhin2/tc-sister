@@ -1,0 +1,140 @@
+:root {
+    --light: #f4daee;
+    --mid:#A15CE6;
+    --dark: #1F2133;
+    --dark-x: #2e3045;
+}
+.all-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.title-page {
+    border-bottom: 1px solid var(--light);
+    padding-top: 0.5vh;
+    padding-bottom: 3vh;
+    margin-bottom: 1em;
+    margin-left: 3vw;
+}
+.title-page h1 {
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--mid);
+}
+.title-page a {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-left: 1em;
+    text-align: right;
+    font-style: italic;
+    position: relative;
+    top: 0.5em;
+}
+.title-page a:hover {
+    color: #89939a;
+}
+.card {
+    width: 70vw;
+    height: 70vh;
+    border-radius: 1em;
+}
+.each-card {
+    margin: 0 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--light);
+    padding: 0.7em;
+    border-radius: 1em;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.card-body div {
+    align-self: center;
+    position: relative;
+    bottom: 2em;
+}
+.card-text {
+    align-content: center;
+}
+.btn.btn-primary {
+    border: none;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    position: relative;
+    top: 1em;
+}
+.card-title {
+    color: var(--dark-x);
+}
+.card-text {
+    color: var(--dark-x);
+}
+.card-img-top {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    align-self: center;
+    position: relative;
+    top: 5vh;
+}
+.btn.btn-primary {
+    align-self: center;
+}
+.btn.btn-primary:hover {
+    background-color: var(--dark-x);
+}
+/* Iphones */
+@media all and (min-width: 375px) {
+    .card {
+        width: 70vw;
+        height: 75vh;
+    }
+    .title-page h1 {
+        font-size: 1.5em;
+    }
+    .title-page a {
+        font-size: 1em;
+    }
+    .card-img-top {
+        width: 254px;
+        height: 254px;
+        padding: 1.3em;
+    }
+}
+@media all and (min-width: 768px) {
+    .title-page {
+        margin: 0;
+        text-align: center;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        margin-bottom: 2em;
+    }
+    .title-page h1 {
+        font-size: 2em;
+        color: var(--mid);
+    }
+    .title-page a {
+        color: #6c757d;
+        font-size: 1.2em;
+    }
+    .title-page a:hover {
+        color: #89939a;
+    }
+    .card {
+        width: 18em;
+        height: 30em;
+    }
+    .card-img-top {
+        width: 280px;
+        height: 280px;
+        position: relative;
+        top: -.4em;
+    }
+}

@@ -13,9 +13,26 @@ const userSchema = new Schema(
     imageUrl: {
       type: String,
       required: [true, 'Image is required.'],
-      match:[/^[0-9A-Za-z!@.,;:'"?-]{1,100}\z/, "Less than 100 characters"]
     },
-    description: String
+    description: {
+      type: String,
+      required: [true, 'Description is required.'],
+      match:[/^\W*(?:\w+(?:\W+|$)){0,100}$/, "Less than 100 words"]
+    },
+    address: {
+      type: String,
+      required: [true, 'Address is required.'],
+    },
+    city: {
+      type: String,
+      required: [true, 'City is required.'],
+    },
+    state: {
+      type: String,
+      required: [true, 'State is required.'],
+    },
+    rate: Number,
+    author: String,
   },
   {
     timestamps: true

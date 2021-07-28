@@ -17,7 +17,7 @@ const userSchema = new Schema(
     info: {
         type: String,
         required: [true, 'Info is required.'],
-        match:[/^\W*(?:\w+(?:\W+|$)){0,100}$/, "Less than 100 words"]
+        match:[/^[0-9A-Za-z!@.,;:'"?-]{1,100}\z/, "Less than 100 characters"]
     }
   },
   {

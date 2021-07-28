@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/nav.css">
     <link rel="stylesheet" href="/stylesheets/profile-card.css">
+    <link rel="stylesheet" href="/stylesheets/agressor.css">
+    <link rel="stylesheet" href="/stylesheets/like.css">
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script>
@@ -36,10 +38,10 @@
             <li class="item"><a href="/agressors">Agressors</a></li>
             <li class="item"><a href="/emergency">Emergency</a></li>
             <li class="item"><a href="/about">About</a></li>
-            <li class="item button"><a href="/userprofile/{{currentUser.username}}">Profile</a></li>
+            <li class="item button adj-image-nav"><a href="/userprofile/{{currentUser.username}}"><img src="{{currentUser.imageUrl}}" class="image-nav-profile"></a></li>
             <li class="item button secondary">
                 <form id="logout-form" action="/logout" method="POST">
-                    <button>Logout</button>
+                    <button class="btn-logout">Logout</button>
                 </form>
             </li>
             <li class="toggle"><span class="bars"></span></li>
