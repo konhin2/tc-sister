@@ -24,3 +24,33 @@
     padding-top: 5px;
     padding-bottom: 10px;
 }
+.upload-agressor{
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid var(--light);
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+.upload-agressor:hover {
+    background-color: white;
+    border: 1px solid white;
+    color: var(--dark-x);
+}
+.align-self-center{
+    padding-bottom: 0 !important;
+    padding-top: 0 !important; ;
+}
+
+@media (min-width: 768px){
+    .col-lg-5 {
+        flex: 0 0 auto;
+        justify-content: center;
+        width: 40%;
+    }
+    .center-evr{
+        display: flex;
+        justify-content: center;
+    }
+}

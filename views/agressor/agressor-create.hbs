@@ -2,15 +2,17 @@
     <h1>Create an agressor</h1>
     <a href="/agressors">Go back</a>
 </div>
-<div class="col-lg-5 d-flex flex-column align-items-end">
-    <div class="px-lg-5 pt-lg-4 pb-lg-3 align-logo w-100 mb-0">
+<div class="center-evr">
+    <div class="col-lg-5 d-flex flex-column align-items-center">
+    <div class="px-lg-5 pt-lg-4 pb-lg-3 align-logo w-100 mb-3">
         <img src="/images/poop.png" class="logo">
-        <h1>Characteristics of the aggressor</h1>
+        <h1>Characteristics</h1>
     </div>
-    <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center ">
-        <form class="mb-5" action="/agressors/create" method="POST" enctype="multipart/form-data">
-            <div class="mb-4">
+    <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
+        <form class="" action="/agressors/create" method="POST" enctype="multipart/form-data">
+            <div class="">
                 <input type="text" name="name" class="form-control bg-dark-x border-0 text-muted" id="name" placeholder="Name">
+                <p class="text-muted">The name has to be unique.</p>
             </div>
             <div class="mb-4">
                 <input type="text" name="address" id="address" class="form-control bg-dark-x border-0 text-muted" placeholder="Address"/>
@@ -55,11 +57,16 @@
                     <option value="Zacatecas">Zacatecas</option>
                 </select>
             </div>
-            <div class="mb-4">
+            <div class="mb-2">
                 <textarea name="description" cols="30" rows="4" class="form-control bg-dark-x border-0 text-muted" id="description" placeholder="Please add the indictment"></textarea>
+                <p class="text-muted">Please write less than 100 words.</p>
             </div>
-            <div class="mb-4">
-                <input type="file" name="newImage" class="form-control-file" id="image" />
+            <div class="mb-4 btn-align">
+                <label for="file-upload" class="upload-agressor">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload image
+                </label>
+                <input type="file" name="newImage" class="form-control bg-dark border-0" id="file-upload" onchange="cambiar()" style="display: none;">
+                <div id="info" style="display: none;"></div>
             </div>
             <div>
                 <button type="submit" class="btn btn-primary w-100 border-0">Upload data</button>
@@ -69,4 +76,5 @@
             {{/if}}
         </form>
     </div>
+</div>
 </div>
