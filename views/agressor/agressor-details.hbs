@@ -47,25 +47,30 @@
     <h1>Agressor's Details</h1>
     <a href="/agressors">Go back</a>
 </div>
-<div>
-    <div>
+<div class="container-details">
+    <div class="ctn-details">
+    <div class="right-elems">
         <div>
-            <img src="{{imageUrl}}">
+            <img src="{{imageUrl}}" class="img-details">
+            
+        </div>
+        <div class="rate-details">
+            <p>Rate: <span>{{rate}}</span></p>
         </div>
     </div>
-    <div>
+    <div class="body-details">
         <h2>{{name}}</h2>
         <p>
             <span>Street: {{address}}</span> - 
             <span>Suburb or City: {{city}}</span> - 
             <span>State: {{state}}</span>
         </p>
-        <p>Rate: <span>{{rate}}</span></p>
         <h3>Indictment: </h3>
-        <p>
+        <p class="description-details">
             {{description}}
         </p>
     </div>
+</div>
 </div>
 {{!-- <div>
     <h3>Comments</h3>
