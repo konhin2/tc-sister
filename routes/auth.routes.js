@@ -13,6 +13,8 @@ router.get('/signup', isLoggedOut, authRouter.getSignup)
 // POST - Signup (procesar la información del formulario)
 router.post('/signup', authRouter.postSignup)
 
+// POST - login with Google
+router.post('/login/google', authRouter.postSingupGoogle)
 
 // Login
 // GET - Login

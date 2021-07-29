@@ -2,6 +2,14 @@ const bcryptjs = require('bcryptjs')
 const mongoose = require("mongoose")
 const User = require("./../models/User.model")
 
+// Google auth
+const {
+    OAuth2Client
+} = require('google-auth-library');
+
+const CLIENT_ID = process.env.CLIENT_ID
+const client = new OAuth2Client(CLIENT_ID);
+
 // Signup
 exports.getSignup = async (req, res) => {
     res.render('auth/signup')
@@ -43,10 +51,10 @@ exports.postSignup = (req, res) => {
                 passwordHash: hashedPassword,
                 imageUrl,
                 description
-            }).then(()=> {
+            }).then(() => {
                 User.findOne({
-                    username
-                })
+                        username
+                    })
                     .then(userFound => {
                         req.session.currentUser = userFound
                         return res.redirect('/userprofile/' + userFound.username)
@@ -110,4 +118,50 @@ exports.postLogin = async (req, res) => {
             return res.redirect('/userprofile/' + userFound.username)
         })
         .catch((e) => console.log(e))
+}
+
+// Login Google
+exports.postSingupGoogle = async (req, res) => {
+    const token = req.body.token
+    let user = {}
+    async function verify() {
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: CLIENT_ID,
+        });
+        const payload = ticket.getPayload();
+        const userid = payload['sub'];
+
+        findMail = payload.email;
+
+        // // Validaciones
+        User.findOne({
+                email: findMail
+            })
+            .then(userFound => {
+                // console.log('usuario encontrado papu', userFound)
+                if (userFound) {
+                    req.session.currentUser = userFound
+                    res.redirect('/agressors')
+                } else {
+                    User.create({
+                        username: payload.name,
+                        email: payload.email,
+                        passwordHash: payload.email,
+                        imageUrl: payload.picture,
+                        description: 'Add a description'
+                    }).then((userCreated) => {
+                        req.session.currentUser = userCreated
+                        res.render('users/user-profile')
+                    })
+                }
+            }).catch(error => {
+                console.log(error)
+            })
+    }
+    verify()
+    .then(() => {
+        // res.redirect('/')
+    })
+    .catch(error => console.log(error))
 }

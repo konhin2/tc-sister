@@ -6,7 +6,7 @@
     --dark: #1F2133;
     --dark-x: #2e3045;
 }
-* {
+body {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 200;
     color: var(--light);
@@ -102,4 +102,7 @@
 }
 .ih-adjust {
     height: calc(100vh - 70px);
+}
+#not_signed_indi6oqia7v7p4 {
+    display: none;
 }

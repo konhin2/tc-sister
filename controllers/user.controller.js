@@ -57,6 +57,7 @@ exports.updateUser = async (req, res) => {
 // POST - Logout
 exports.logout = async (req, res) => {
     console.log('funciona')
+    res.clearCookie('session-token')
     req.session.destroy(err => {
         if (err) {
             console.log(err)

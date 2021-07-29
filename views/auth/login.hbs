@@ -53,19 +53,18 @@
                 </form>
                 <p class="text-center text-muted">Or Login with:</p>
                 <div class="d-flex justify-content-around">
-                    <button type="submit" class="btn btn-outline-light flex-grow-1 mr-2 flex-elements">
+                    {{!-- <div class="btn btn-outline-light flex-grow-1 mr-2 flex-elements" >
+                        
                         <div class="google"></div>
                         Google
-                    </button>
-                    <button type="submit" class="btn btn-outline-light flex-grow-1 ml-2 flex-elements">
-                        <div class="facebook"></div>
-                        Facebook
-                    </button>
+                    </div> --}}
+                    <div class="g-signin2" data-onsuccess="onSignIn""></div>
                 </div>
             </div>
             <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
                 <p class="d-inline-block mb-0 text-muted">Don't have an account?</p>
-                <a href="/signup" class="text-decoration-none text-muted btn-sign-up">Sign up.</a>
+                <a href="/signup" class="text-decoration-none text-muted btn-sign-up">Sign up.</a> <br>
+                <a href="#" onclick="signOut();">Sign out Google</a>
             </div>
         </div>
     </div>
