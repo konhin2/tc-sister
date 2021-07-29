@@ -4,10 +4,3 @@ function signOut() {
         console.log('User signed out.');
     });
 }
-(() => {
-    const signOutButton = document.getElementById('btn-logout');
-    signOutButton.addEventListener('click', () => {
-        console.log('deslogeado de google')
-        signOut();
-    })
-})()

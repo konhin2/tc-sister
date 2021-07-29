@@ -123,45 +123,28 @@ exports.postLogin = async (req, res) => {
 // Login Google
 exports.postSingupGoogle = async (req, res) => {
     const token = req.body.token
-    let user = {}
-    async function verify() {
-        const ticket = await client.verifyIdToken({
-            idToken: token,
-            audience: CLIENT_ID,
-        });
-        const payload = ticket.getPayload();
-        const userid = payload['sub'];
-
-        findMail = payload.email;
-
-        // // Validaciones
-        User.findOne({
-                email: findMail
-            })
-            .then(userFound => {
-                // console.log('usuario encontrado papu', userFound)
-                if (userFound) {
-                    req.session.currentUser = userFound
-                    res.redirect('/agressors')
-                } else {
-                    User.create({
-                        username: payload.name,
-                        email: payload.email,
-                        passwordHash: payload.email,
-                        imageUrl: payload.picture,
-                        description: 'Add a description'
-                    }).then((userCreated) => {
-                        req.session.currentUser = userCreated
-                        res.render('users/user-profile')
-                    })
-                }
-            }).catch(error => {
-                console.log(error)
-            })
-    }
-    verify()
-    .then(() => {
-        // res.redirect('/')
+    const {email} = req.body.token
+    User.findOne({
+        email
     })
-    .catch(error => console.log(error))
+    .then(userFound => {
+        // console.log('usuario encontrado papu', userFound)
+        if (userFound) {
+            req.session.currentUser = userFound
+            res.render('agressor/index')
+        } else {
+            User.create({
+                username: token.name,
+                email: token.email,
+                passwordHash: token.email,
+                imageUrl: token.getImageUrl,
+                description: 'Add a description'
+            }).then((userCreated) => {
+                req.session.currentUser = userCreated
+                res.render('agressor/index')
+            })
+        }
+    }).catch(error => {
+        console.log(error)
+    })
 }
