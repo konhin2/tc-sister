@@ -187,7 +187,6 @@ a:hover {
 }
 .button.adj-image-nav a {
     padding: 1px !important;
-    background:var(--mid);
     border-radius: 50%;
     border: 2px solid var(--dark-x);
 }

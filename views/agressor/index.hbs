@@ -4,7 +4,7 @@
 </div>
 <div class="all-cards">
     {{#each agressors}}
-    <div class="each-card">
+    <div class="each-card card-magic">
         <div class="card">
             <img src="{{imageUrl}}" class="card-img-top" alt="{{name}}">
             <div class="card-body">
@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 
-                <a href="/agressor/{{_id}}" class="btn btn-primary"> View Details</a>
+                <a href="/agressor/{{_id}}" class="btn btn-primary" id="btn-details"> View Details</a>
             </div>
         </div>
     </div>

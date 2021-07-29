@@ -129,3 +129,6 @@
         justify-content: center;
     }
 }
+.ctn-details {
+    box-shadow: 2px 2px 25px 2px var(--mid);
+}

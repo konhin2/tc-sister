@@ -1,0 +1,26 @@
+:root {
+    --light: #f4daee;
+    --mid: #A15CE6;
+    --dark: #1F2133;
+    --dark-x: #2e3045;
+}
+
+.logo{
+    background-color: var(--light);
+    padding: 5px;
+    border-radius: 1em;
+}
+#description {
+    resize: none;
+}
+.adj-title-create {
+    margin-bottom: 0;
+}
+.align-logo {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.title-page {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}

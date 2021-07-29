@@ -106,3 +106,9 @@ body {
 #not_signed_indi6oqia7v7p4 {
     display: none;
 }
+.position-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
