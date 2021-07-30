@@ -1,80 +1,79 @@
-<div class="title-page">
-    <h1>Edit an agressor</h1>
-    <a href="/agressors">Go back</a>
-</div>
-{{#with agressor}}
-<div class="row">
-    <div class="col-md-6">
-        <form action="/agressor/{{_id}}/edit" method="POST" enctype="multipart/form-data">
-            <h5>Characteristics of the aggressor.</h5>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" name="name" class="form-control" id="name" value="{{name}}">
-            </div>
-            <div class="form-group">
-                <label for="description">Indictment:</label>
-                <textarea name="description" cols="30" rows="4" class="form-control" id="description">{{description}}</textarea>
-            </div>
-            <h5>Where did the event take place?</h5>
-            <div class="form-group">
-                <label for="address">Address: </label>
-                <input type="text" name="address" id="address" value="{{address}}"/>
-            </div>
-            <div class="form-group">
-                <label for="city">City: </label>
-                <input type="text" name="city" id="city" value="{{city}}"/>
-            </div>
-            <div class="form-group">
-                <label for="state">State: </label>
-                <select name="state" id="state">
-                    <option selected='true' disabled>Selet State</option>
-                    <option value="Aguascalientes">Aguascalientes</option>
-                    <option value="Baja California">Baja California</option>
-                    <option value="Baja California Sur">Baja California Sur</option>
-                    <option value="Campeche">Campeche</option>
-                    <option value="Coahuila">Coahuila</option>
-                    <option value="Colima">Colima</option>
-                    <option value="Chiapas">Chiapas</option>
-                    <option value="Chihuahua">Chihuahua</option>
-                    <option value="Ciudad de Mexico">Ciudad de Mexico</option>
-                    <option value="Durango">Durango</option>
-                    <option value="Guanajuato">Guanajuato</option>
-                    <option value="Guerrero">Guerrero</option>
-                    <option value="Hidalgo">Hidalgo</option>
-                    <option value="Jalisco">Jalisco</option>
-                    <option value="Edo. Mx.">Edo. Mx.</option>
-                    <option value="Michoacan">Michoacan</option>
-                    <option value="Morelos">Morelos</option>
-                    <option value="Nayarit">Nayarit</option>
-                    <option value="Nuevo Leon">Nuevo Leon</option>
-                    <option value="Oaxaca">Oaxaca</option>
-                    <option value="Puebla">Puebla</option>
-                    <option value="Queretaro">Queretaro</option>
-                    <option value="Quintana Roo">Quintana Roo</option>
-                    <option value="San Luis Potosi">San Luis Potosi</option>
-                    <option value="Sinaloa">Sinaloa</option>
-                    <option value="Sonora">Sonora</option>
-                    <option value="Tabasco">Tabasco</option>
-                    <option value="Tamaulipas">Tamaulipas</option>
-                    <option value="Tlaxcala">Tlaxcala</option>
-                    <option value="Veracruz">Veracruz</option>
-                    <option value="Yucatan">Yucatan</option>
-                    <option value="Zacatecas">Zacatecas</option>
-                </select>
-                <input type="text" name="existingState" hidden value="{{state}}">
-            </div>
-            <div class="form-group">
-                <label for="image">Image:</label>
-                <input type="file" name="newImage" class="form-control-file" id="image"/>
-                <input type="text" name="existingImage" hidden value="{{imageUrl}}">
-                <input type="text" name="existingRate" hidden value="{{rate}}">
-            </div>
-            <button type="submit" class="btn btn-primary">Upload data</button>
-            </div>
+<div class="center-evr">
+    <div class="col-lg-5 d-flex flex-column align-items-center">
+        <div class="px-lg-5 pt-lg-4 pb-lg-3 align-logo w-100 mb-3">
+            <img src="/images/poop.png" class="logo">
+            <h1>Characteristics</h1>
+        </div>
+        <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
+            <form action="/agressor/{{agressor._id}}/edit" method="POST" enctype="multipart/form-data">
+                <div class="">
+                    <input type="text" name="name" class="form-control bg-dark-x border-0 text-muted" id="name" value="{{agressor.name}}">
+                    <p class="text-muted">The name has to be unique.</p>
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="address" id="address" class="form-control bg-dark-x border-0 text-muted" value="{{agressor.address}}"/>
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="city" id="city" class="form-control bg-dark-x border-0 text-muted" value="{{agressor.city}}"/>
+                </div>
+                <div class="mb-4">
+                    <select name="state" id="state" class="form-control bg-dark-x border-0 mb-2 text-muted">
+                        <option selected='true' disabled>Selet State</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila">Coahuila</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Edo. Mx.">Edo. Mx.</option>
+                        <option value="Michoacan">Michoacan</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo Leon">Nuevo Leon</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Queretaro">Queretaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosi">San Luis Potosi</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz">Veracruz</option>
+                        <option value="Yucatan">Yucatan</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+                    <input type="text" name="existingState" hidden value="{{agressor.state}}">
+                </div>
+                <div class="mb-2">
+                    <textarea name="description" cols="30" rows="4" class="form-control bg-dark-x border-0 text-muted" id="description">{{agressor.description}}</textarea>
+                    <p class="text-muted">Please write less than 100 words.</p>
+                </div>
+                <div class="mb-4 btn-align">
+                    <label for="file-upload" class="upload-agressor">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload image
+                    </label>
+                    <input type="file" name="newImage" class="form-control bg-dark border-0" id="file-upload" onchange="cambiar()" style="display: none;">
+                    <div id="info" style="display: none;"></div>
+                    <input type="text" name="existingImage" hidden value="{{agressor.imageUrl}}">
+                    <input type="text" name="existingRate" hidden value="{{agressor.rate}}">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary w-100 border-0">Upload data</button>
+                </div>
+            </form>
             {{#if msg}}
                 <p>{{msg}}</p>
             {{/if}}
-        </form>
+        </div>
     </div>
 </div>
-{{/with}}

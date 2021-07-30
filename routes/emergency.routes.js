@@ -8,5 +8,7 @@ const { isLoggedIn, isLoggedOut } = require("./../middleware/route-guard")
 // 2. RUTAS
 router.get('/emergency', isLoggedIn, emergencyRouter.home)
 
+router.post('/emergency', emergencyRouter.postCoords)
+
 // 3. EXPORTACIÓN
 module.exports = router

@@ -54,3 +54,10 @@
         justify-content: center;
     }
 }
+.btn-hover:hover{
+    background-color: white !important;
+}
+.special-msg {
+    font-size: 13px;
+    font-style: italic;
+}

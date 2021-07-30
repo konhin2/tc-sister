@@ -1,1 +1,19 @@
-<p>Emergency</p>
+<div class="title-page">
+    <h1>Emergency</h1>
+    <p class="text-muted">If you are in trouble send your location to the users</p>
+    
+</div>
+<form action="/emergency" method="POST">
+    <button type="submit" id="send-location">Send My location</button>
+</form>
+{{#if msg}}
+    <p class="text-muted">funciona{{msg}}</p>
+{{/if}}
+{{#if coords}}
+    <p>ya me canse</p>
+{{/if}}
+
+<div>
+    <div id="map-template">
+    </div>
+</div>

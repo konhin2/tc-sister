@@ -92,11 +92,28 @@ exports.getEditAgressor = async (req, res) => {
 
 exports.postEditAgressor = async (req, res) => {
     const {id} = req.params
+    let findAgressor
     const {name, description, address, city, state, existingImage, existingRate, existingState} = req.body
+    
+    const regex = /^\W*(?:\w+(?:\W+|$)){0,100}$/
     // Validar que todos los campos esten completos
     if (!name || !description || !address || !city) {
         return res.render('agressor/agressor-edit', {
             msg: "All the fields are required. Except image file"
+        })
+    }
+    try {
+        const agressor = await Agressor.findById(id)
+        if (agressor.author === req.session.currentUser.username) {
+            findAgressor = agressor
+        } 
+    } catch(err) {
+        console.log(err)
+    }
+    if (!regex.test(description)) {
+        return res.render('agressor/agressor-edit', {
+            msg: "Please write less than 100 words.",
+            agressor: findAgressor
         })
     }
     let imageUrl
