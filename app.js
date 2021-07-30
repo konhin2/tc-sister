@@ -1,9 +1,14 @@
 // 1. IMPORTACIONES
 const express = require('express')
+const { Socket } = require('socket.io')
 const app = express()
 const connectDB = require('./db/index')
-
+const socketIO = require('socket.io')
+const http = require('http')
 // 2. MIDDLEWARES
+// Socket Io
+const server = http.createServer(app)
+const io = socketIO(server)
 // Conectar a base de datos
 connectDB()
 // Traer la carpeta /public
@@ -38,7 +43,9 @@ app.use('/', require('./routes/about.routes'))
 // Ruta Home
 app.use('/', require('./routes/index.routes'))
 
+// Sockets
+require('./sockets')(io)
 
 
 // 4. SERVIDOR
-module.exports = app
+module.exports = server
