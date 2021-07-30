@@ -10,7 +10,7 @@ map.locate({enableHighAccuracy: true})
 map.on('locationfound', (e) => {
     const coords = [e.latlng.lat, e.latlng.lng]
     const marker = L.marker(coords).addTo(map)
-    marker.bindPopup("I'm in trouble, please help!")
+    marker.bindPopup("You're here!")
     marker.openPopup()
     socket.emit('userCoordinates', e.latlng)
 })
