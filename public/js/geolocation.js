@@ -17,7 +17,7 @@ map.on('locationfound', (e) => {
 
 socket.on('newUserCoordinates', (coords) => {
     console.log('New user is connected')
-    const marker = L.marker([coords.lat +1, coords.lng+1]).addTo(map)
+    const marker = L.marker([coords.lat, coords.lng]).addTo(map)
     marker.bindPopup("I'm in trouble, please help!")
     marker.openPopup()
 })
